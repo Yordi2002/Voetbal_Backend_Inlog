@@ -29,7 +29,7 @@ namespace DAL.Context
                 using (connection)
                 {
                     //execute query on database and return result
-                    list = connection.Query<UserDTO>(sql).ToList();
+                    list = connection.Query<UserDTO>(sql).ToList(); 
                 }
             }
 
