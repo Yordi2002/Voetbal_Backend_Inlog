@@ -18,8 +18,13 @@ namespace UnitTest.Container
             UserContainer userContainer = new UserContainer(new user());
             UserDTO userdto = new UserDTO() { Naam = "test", Wachtwoord = "123" };
             User user = new User(userdto);
-            Assert.AreEqual(userContainer.attemptLogin(user), true);
-            
+
+            User user1 = userContainer.attemptLogin(user);
+
+            Assert.AreEqual(user.Naam, user1.Naam);
+            Assert.AreEqual("test", user1.Naam);
+            Assert.AreEqual("123", user1.Wachtwoord);
+
         }
     }
 }

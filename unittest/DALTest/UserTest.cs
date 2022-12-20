@@ -17,7 +17,17 @@ namespace UnitTest.DALTest
 
         public UserDTO AttemptLogin(UserDTO userDTO)
         {
-            return userDTO;
+            for(var i =0; i < UserDTOs.Count; i++)
+            {
+                if (UserDTOs[i].Naam == userDTO.Naam)
+                {
+                    if (UserDTOs[i].Wachtwoord == userDTO.Wachtwoord)
+                    {
+                        return userDTO;
+                    }
+                }
+            }
+            return new UserDTO() { UserID = 0, Naam = "", Wachtwoord = "" };
         }
     }
 }
